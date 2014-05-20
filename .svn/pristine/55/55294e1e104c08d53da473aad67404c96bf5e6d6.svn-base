@@ -1,0 +1,107 @@
+html, body {
+    height: 100%;
+}
+.fill
+{
+	height: 100%;
+}
+
+.no_margin{
+margin:0px !important;
+}
+
+#disclaimer_header{
+    position: absolute;
+    top: 0px;
+    left: 35%;
+    width: 25%;
+    background-color: #DDD;
+    border: solid 2px crimson;
+    padding: 3px;
+    text-align: center;
+    font-size: 14px;
+    z-index: 999;
+}
+
+.sidebar{
+    position: absolute;
+}
+
+td{
+    vertical-align:text-top;
+}
+.center1 {
+  position: absolute;
+  margin: auto;
+  top: 30%; left: 10%; right: 10%;
+  }
+  
+.center2 {
+  margin: auto;
+  top: 30%; left: 10%; right: 10%;
+}
+
+.container-fluid
+ {
+	padding-right: 0px;
+	padding-left: 0px;
+	height: 95%;
+}
+
+.myButton {
+    width: 75px;
+    height: 50px;
+}
+.nopadding {
+	padding-right: 0%;
+	padding-left: 0%;
+	padding-top: 0%;
+	padding-bottom: 0%;
+}
+.navbar-search
+{
+	text-align: center;
+    border-radius: 300px;
+}
+.span7
+{
+	border: 1px solid black;
+    margin-left: 0%;
+    margin-right: 0%;
+    text-align: left;
+}
+
+form {
+margin: 0 0 0px;
+}
+
+.active
+{
+      color: #ffffff;
+}
+.content
+{
+    padding-top:3%;
+}
+.border
+{
+	border: 1px solid black;
+}
+
+.span2,.span8
+{
+	height:95%;
+}
+.span8
+{
+    background-color: #f5f5f5;
+}
+
+.category_bar
+{
+    background-color: #ffffff;
+}
+.navbar 
+{
+	margin-bottom: 0px;
+}

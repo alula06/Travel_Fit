@@ -1,0 +1,33 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+#SetEnv ENVIRONMENT dev (if not already set to local)
+RewriteCond %{ENV:ENVIRONMENT} !^local$
+RewriteRule .* - [E=ENVIRONMENT:dev]
+
+#SetEnv ENVIRONMENT production if on group webserver
+RewriteCond %{REQUEST_URI} ^/~f13g06(.*)
+RewriteRule .* - [E=ENVIRONMENT:production]
+
+# used to enable laravel on MAMP
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{SERVER_PORT} ^8888$
+RewriteRule ^ index.php [L]
+
+# used to enable laravel on XAMPP & WAMP
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{SERVER_PORT} ^8080$
+RewriteRule ^ index.php [L]
+
+# used to enable laravel on URLs matching: sfsuswe.com/~user/
+# this line assigns the first part of URI (/~user) to variable %1
+# and everything following to %2
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^/~([a-zA-Z0-9-]*.)?/(.*)
+RewriteRule ^ /~%1/index.php [E=USER:%1,L]
+
+
+

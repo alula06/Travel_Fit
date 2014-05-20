@@ -1,0 +1,60 @@
+<?php
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+?>
+<style>
+    table{
+        width: 100%;
+    }
+    td {
+        border: solid 1px #000;
+        padding: 15px;
+    }
+    
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('a.delete').on('click', function(e){
+           var proceed = confirm('Are you sure you want to delete this record ?');
+           if(!proceed){
+               e.preventDefault();
+           }
+        });
+    });
+</script>
+
+<div class="container">
+    <div style="float:left"><h3>Images Directory</h3></div>
+    <div style="float:right"><a href="<?=asset('image')?>"><button id="addNew"><i class="fa fa-plus"></i> Add New</button></a></div>
+    <div style="clear:both"></div>
+    <table>
+        <tr>
+            <td width="25">edit</td>
+            <td width="25">id</td>
+            <td>listing_id</td>
+            <td>review_id</td>
+            <td>filename</td>
+            <td width="35">delete</td>
+        </tr>
+    <?php
+    foreach($images as $key => $image){ //key=>$listing
+    ?>
+        <tr>
+            <td><a href="<?=asset('image')?>/<?=$image->id?>"><i class="fa fa-edit"></i></a></td>
+            <td><?=$image->id?></a></td>
+            <td><?=$image->listing_id?></td>
+            <td><?=$image->review_id?></td>
+            <td><?=$image->filename?></a></td>
+            <td data-images-listing_id="<?=$image->listing_id ?>"><a class="delete" href="<?=asset('images/delete')?>/<?=$image->id?>"><i class="fa fa-times"></i></a></td>
+        </tr>
+    <?php
+    }
+    ?>
+    </table>
+</div>
+

@@ -1,0 +1,3 @@
+<?php
+// depends on $listing
+?>
